@@ -37,11 +37,9 @@ jobs:
     steps:
       - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
       - uses: ./.github/actions/gradle_cache
-      - uses: ./.github/actions/cargo_home_cache
-      - uses: ./.github/actions/cargo_target_dir_cache
+      - uses: Swatinem/rust-cache@ce325b60658c1b38465c06cc965b79baf32c1e72
       - uses: ./.github/actions/elixir_cache
       - run: ./gradlew build -Pmode=release
-      - uses: ./.github/actions/cargo_target_dir_pre_cache
 
   list_gradle_tasks:
     name: All - List Gradle Tasks
